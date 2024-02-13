@@ -4,8 +4,6 @@ import photo1 from "../images/HomeBanner.jpg";
 import CarouselHome from "./CarouselHome";
 import { IoStorefrontSharp } from "react-icons/io5";
 
-// import { Parallax } from "react-parallax";
-
 const HomeBa = () => {
   return (
     <>

@@ -8,8 +8,8 @@ import Login from './components/Login';
 
 // import OrderForm from './components/OrderForm';
 import Protected from './ProtectedRoutes/Protected';
-// import HomeBanner from './components/HomeBanner';
-import HomeBa from './components/HomeBa';
+import HomeBanner from './components/HomeBanner';
+// import HomeBa from './components/HomeBa';
 // import Footer from './components/Footer';
 
 
@@ -21,8 +21,8 @@ function App() {
       <NavbarT />
       <Routes>
         <Route path='/' element ={<Home />}/>
-        {/* <Route path='/homebanner' element ={<HomeBanner />}/> */}
-        <Route path='/homebanner' element ={<HomeBa />}/>
+        <Route path='/homebanner' element ={<HomeBanner />}/>
+        {/* <Route path='/homebanner' element ={<HomeBa />}/> */}
         {/* <Route path='/' element ={<Protected Component = {Home} />}/> */}
         {/* <Route path='/cart' element ={<Cart />}/> */}
         {/* <Route path='/cart' element ={<Protected Component = {Cart} />}/> */}

@@ -34,8 +34,8 @@ const NavbarT = () => {
               {/* <Nav.Link to='/cart'>Cart</Nav.Link> */}
               <Nav.Link as={Link} to="/cart">Cart-<span>{items.cartData.length}</span></Nav.Link>
               <ButtonGroup>
-                <Button variant="success"><Nav.Link as={Link} to="/login">Login</Nav.Link></Button>
-                <Button variant="primary"><Nav.Link as={Link} to="/register">Sign Up</Nav.Link></Button>
+                <span><Nav.Link as={Link} to="/login">Login</Nav.Link></span>
+                <span><Nav.Link as={Link} to="/register">Sign Up</Nav.Link></span>
               </ButtonGroup>
             </Nav>
           </Navbar.Collapse>
