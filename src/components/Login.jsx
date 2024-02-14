@@ -143,25 +143,25 @@ const Login = () => {
   return (
     <Container
       className="d-flex justify-content-center align-items-center flex-column mt-5"
-      style={{ height: "500px" }}
+      style={{background:"#ECE8EA", height:"80vh", borderRadius:"25px"}}
     >
       <div
         style={{
-          height: "100vh",
-          width: "400px",
+          height: "70%",
+          width: "500px",
           borderRadius: "20px",
           boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.2)",
+          background:"white",
         }}
-        className="mt-5 p-4"
+        
       >
-        <center className="mt-3">
-          <h2>Login</h2>
-        </center>
-        <center>
-          <Form onSubmit={handleFormSubmit}>
+                <h2 style={{ textAlign: "center", marginTop: "50px" }}>Login</h2>
+
+       
+          <Form onSubmit={handleFormSubmit} style={{ margin: "auto", width: "50%" }}>
             <Form.Group>
-              <Form.Label className="mt-3" style={{ fontSize: "18px" }}>
-                Email
+              <Form.Label  style={{ fontSize: "18px" }}>
+                Username
               </Form.Label>
               <Form.Control
                 type="text"
@@ -170,12 +170,12 @@ const Login = () => {
                 value={formData.username}
                 onChange={handleInputChange}
                 required
-                className="mt-2"
+                
               />
             </Form.Group>
 
             <Form.Group>
-              <Form.Label className="mt-3" style={{ fontSize: "18px" }}>
+              <Form.Label  style={{ fontSize: "18px", marginTop:"20px" }}>
                 Password
               </Form.Label>
               <Form.Control
@@ -185,20 +185,31 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleInputChange}
                 required
-                className="mt-2"
+                
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="mt-4">
+            <Button variant="primary" type="submit" style={{marginTop:"20px", width:"100%"}}>
               Login
             </Button>
           </Form>
+          <p
+          style={{
+            textAlign: "end",
+            marginTop: "10px",
+            marginRight: "125px",
+            fontSize: "16px",
+            marginBottom:"50px"
+          }}
+        >
+          Already registered? <a href="/signin">Sign in</a>
+        </p>
           {loginMessage && (
             <Alert variant={loginMessage.includes("successful") ? "success" : "danger"} className="mt-3">
               {loginMessage}
             </Alert>
           )}
-        </center>
+        
       </div>
     </Container>
   );

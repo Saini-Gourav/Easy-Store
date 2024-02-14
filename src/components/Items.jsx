@@ -3,8 +3,10 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 // import image1 from '../images/photo4.jpg';
 import Item2 from "../images/Item2.png";
 import Item1 from "../images/Item1.png";
+import Parallax from "./Parallax";
 const Items = () => {
   return (
+    <>
     <Container>
       <Row>
         <Col md={12}>
@@ -24,7 +26,7 @@ const Items = () => {
       </Row>
       <Row>
         <Col md={3}>
-          <div style={{ background: "#F7F8FB" }}>
+          <div style={{ background: "#ECE8EA" }}>
             <center>
               <img src={Item2} alt="" height={300} width={250} />
             </center>
@@ -39,7 +41,7 @@ const Items = () => {
           </div>
         </Col>
         <Col md={3}>
-          <div style={{ background: "#F7F8FB" }}>
+          <div style={{ background: "#ECE8EA" }}>
             <center>
               <img src={Item1} alt="" height={300} width={250} />
             </center>
@@ -54,7 +56,7 @@ const Items = () => {
           </div>
         </Col>
         <Col md={3}>
-          <div style={{ background: "#F7F8FB" }}>
+          <div style={{ background: "#ECE8EA" }}>
             <center>
               <img src={Item2} alt="" height={300} width={250} />
             </center>
@@ -69,7 +71,7 @@ const Items = () => {
           </div>
         </Col>
         <Col md={3}>
-          <div style={{ background: "#F7F8FB" }}>
+          <div style={{ background: "#ECE8EA" }}>
             <center>
               <img src={Item1} alt="" height={300} width={250} />
             </center>
@@ -84,7 +86,10 @@ const Items = () => {
           </div>
         </Col>
       </Row>
+      
     </Container>
+    <Parallax />
+    </>
   );
 };
 

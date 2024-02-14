@@ -9,6 +9,8 @@ import Login from './components/Login';
 // import OrderForm from './components/OrderForm';
 import Protected from './ProtectedRoutes/Protected';
 import HomeBanner from './components/HomeBanner';
+import Footer from './components/Footer';
+
 // import HomeBa from './components/HomeBa';
 // import Footer from './components/Footer';
 
@@ -36,6 +38,8 @@ function App() {
           <Route path='/cart' element ={<Cart />}/>
         </Routes> */}
         {/* <Footer /> */}
+        
+        <Footer />
     </BrowserRouter>
     </>
   )

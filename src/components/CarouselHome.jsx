@@ -9,7 +9,7 @@ import photo3 from "../images/carousel3.png"
 function CarouselHome() {
   const imageStyle = {
     width: "100%",
-    height: "600px    ",
+    height: "600px",
 
     
     

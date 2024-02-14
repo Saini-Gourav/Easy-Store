@@ -31,22 +31,24 @@ const Home = () => {
 
   return (
     <>
-    <Container className="mt-4 mb-4">
-        <Row>
+   
+
+<Container className="mt-4 mb-4">
+      <Row>
         {data?.users?.data?.map((item, index) => (
-          <Col key={index} xs={12} md={4}>
-            <Card style={{ width: "200px", height: "500px" }}>
-              <Card.Img variant="top" src={`http://localhost:5000/${item?.image}`} />
+          <Col key={index} xs={12} md={4} className="mb-3">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={`http://localhost:5000/${item?.image}`} height={200} width={100}/>
               <Card.Body>
-                <Card.Title style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{item.title}</Card.Title>
-                <Card.Title>{item.price}</Card.Title>
-                <Card.Text style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{item.description}</Card.Text>
-                <Button onClick={() => handleAdd(item)} variant="primary">Add to cart</Button>
+                <Card.Title>{item.title}</Card.Title>
+                {/* <Card.Text style={{ height: "6rem", overflow: "hidden", textOverflow: "ellipsis" }}>{item.description}</Card.Text> */}
+                <Card.Text>${item.price}</Card.Text>
+                <Button onClick={() => handleAdd(item)} variant="primary" block>Add to Cart</Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
-        </Row>
+      </Row>
     </Container>
     </>
   )

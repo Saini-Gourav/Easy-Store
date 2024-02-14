@@ -92,7 +92,7 @@
 
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import CarouselHome from "./CarouselHome";
+// import CarouselHome from "./CarouselHome";
 import photo1 from "../images/BannerPhoto.png";
 import { IoStorefrontSharp } from "react-icons/io5";
 import Items from "./Items";
@@ -136,7 +136,7 @@ const HomeBanner = () => {
         </Row>
       </Container>
       <Items />
-      <CarouselHome />
+      {/* <CarouselHome /> */}
     </>
   );
 };
