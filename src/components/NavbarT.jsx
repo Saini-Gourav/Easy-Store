@@ -7,11 +7,22 @@ import {
   Button,
   ButtonGroup,
 } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux";
+import { getFilterData } from "../features/filterSlice";
 
 const NavbarT = () => {
-    const items = useSelector((state) => state.cart)
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const items = useSelector((state) => state.cart)
+
+  const handleFilter = (category) => {
+    dispatch(getFilterData(category))
+    navigate("/category");
+}
+
   return (
     <>
       <Navbar expand="md" className="bg-body-tertiary" fixed="">
@@ -24,10 +35,10 @@ const NavbarT = () => {
               <Nav.Link as={Link} to="/homebanner">About</Nav.Link>
               <Nav.Link href="#contact">Contact</Nav.Link>
               <NavDropdown title="Categories">
-                <NavDropdown.Item href="#">Shirt</NavDropdown.Item>
-                <NavDropdown.Item href="#">Jeans</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleFilter("mens")}>MENS</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleFilter("women")}>WOMENS</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#">Jacket</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleFilter("kids")}>KIDS</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>

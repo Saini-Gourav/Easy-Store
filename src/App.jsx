@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Protected from './ProtectedRoutes/Protected';
 import HomeBanner from './components/HomeBanner';
 import Footer from './components/Footer';
+import CategoryData from './components/CategoryData';
 
 // import HomeBa from './components/HomeBa';
 // import Footer from './components/Footer';
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element ={<Home />}/>
         <Route path='/homebanner' element ={<HomeBanner />}/>
+        <Route path='/category' element ={<CategoryData />}/>
         {/* <Route path='/homebanner' element ={<HomeBa />}/> */}
         {/* <Route path='/' element ={<Protected Component = {Home} />}/> */}
         {/* <Route path='/cart' element ={<Cart />}/> */}
