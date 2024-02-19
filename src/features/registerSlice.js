@@ -17,6 +17,8 @@ export const registerUser = createAsyncThunk("registerUser", async (data,{reject
     });
     try{
         const result = await response.json();
+        // console.log(result,"tokencheckRegister")
+        localStorage.setItem("token", result.token);
         return result;
     }
     catch(error) {

@@ -94,7 +94,8 @@
 
 import React, { useState } from "react";
 import { Form, Button, Container, Alert } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import alertMsg from '../Library/library';
 
 
 const Login = () => {
@@ -106,7 +107,7 @@ const Login = () => {
     password: "",
   });
 
-  const [loginMessage, setLoginMessage] = useState(null);
+  // const [loginMessage, setLoginMessage] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -126,23 +127,33 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        setLoginMessage("Login successful!");
-        localStorage.setItem("token", data.token);
-        // navigate("/")
+      ///////////
+      const data = await response.json();
+      console.log(data,"checkkar")
+      // console.log(data.token,"tokenCheck")
+      localStorage.setItem("token", data.token);
+
+      //////////
+
+      if (data.token) {
+        // const data = await response.json();
+        // setLoginMessage("Login successful!");
+        alertMsg.sweetalert.toast("successfully Login.")
+
+        
+        navigate("/homebanner")
       } else {
-        setLoginMessage("Authentication failed. Please check your credentials.");
+        // setLoginMessage("Authentication failed. Double se check kar");
       }
     } catch (error) {
-      console.error("Error during login:", error);
+      // console.error("Error during login:", error);
       setLoginMessage("An error occurred during login. Please try again later.");
     }
   };
 
   return (
     <Container
-      className="d-flex justify-content-center align-items-center flex-column mt-5"
+      className="d-flex justify-content-center align-items-center flex-column mt-5 mb-5"
       style={{background:"#ECE8EA", height:"80vh", borderRadius:"25px"}}
     >
       <div
@@ -202,13 +213,15 @@ const Login = () => {
             marginBottom:"50px"
           }}
         >
-          Already registered? <a href="/signin">Sign in</a>
+          Already registered? <Link as={Link} to="/register">
+                    Sign Up
+                  </Link>
         </p>
-          {loginMessage && (
+          {/* {loginMessage && (
             <Alert variant={loginMessage.includes("successful") ? "success" : "danger"} className="mt-3">
               {loginMessage}
             </Alert>
-          )}
+          )} */}
         
       </div>
     </Container>

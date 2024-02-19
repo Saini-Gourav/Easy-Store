@@ -117,7 +117,7 @@ function ModalT() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="success" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

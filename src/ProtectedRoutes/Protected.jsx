@@ -1,43 +1,15 @@
-// import React, { useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
 import { Navigate, Outlet } from "react-router-dom";
 
-// const Protected = (props) => {
-//     const { Component } = props;
-//     const navigate = useNavigate();
+const Protected = ({ children }) => {
 
-//     useEffect(() => {
-//         let login = localStorage.getItem('login');
-//         console.log(login,'GouravLogin');
-//         if (!login) {
-//             navigate("/login");
-//         }
-//     }, []);
+  let isAuthenticated = localStorage.getItem("token");
+  console.log(isAuthenticated,'checkProtectedSide')
 
-//     return (
-//         <div>
-//             {/* {login === true ? <Component /> : (<>ja phele login kar</>) } */}
-//             <Component />
-//         </div>
-//     );
-// };
+  if (!isAuthenticated) {
+    return <Navigate to={"/login"} />;
+  }
 
-// export default Protected;
-
-
-
-const Protected = ({children}) => {
-   let isAuthenticated = true;
-if(!isAuthenticated)
-{
-    return <Navigate to={"/login"}/>;
-}
-
-  
-
-    return children ? children : <Outlet />
+  return children ? children : <Outlet />;
 };
 
 export default Protected;
-
